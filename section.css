@@ -156,6 +156,17 @@ h7 {
         margin-right: 0;
     }
 
+h8 {
+    display: inline;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.interests-section-inner {
+    font-size: 16px;
+}
+
 .p-languages {
     margin: 0 auto;
     border-spacing: 15px;
