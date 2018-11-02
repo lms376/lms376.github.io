@@ -37,7 +37,7 @@
     }
 
     .link-icons a:hover {
-        color: var(--color);
+        color: var(--second-accent-color);
     }
 
 /* links */
@@ -79,7 +79,7 @@
     }
 
     .links button:hover{
-        color: var(--main-accent-color);
+        color: var(--second-accent-color);
     }
 
 button {
