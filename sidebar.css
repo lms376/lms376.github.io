@@ -23,9 +23,26 @@
         transition-duration: 1s;
     }
 
+.link-icons {
+    color: var(--main-accent-color);
+    font-size: 32px;
+    margin-top: 5%;
+    word-spacing: 15px;
+}
+
+    .link-icons a {
+        text-decoration: none;
+        color: var(--main-accent-color);
+        transition-duration: 1s;
+    }
+
+    .link-icons a:hover {
+        color: var(--color);
+    }
+
 /* links */
 .links {
-    margin-top: 10%;
+    margin-top: 5%;
     list-style-type: none;
     margin-left: 0;
     padding: 0;
