@@ -150,6 +150,7 @@ h7 {
     line-height: 40px;
     white-space: nowrap;
     font-size: 18px;
+    border-radius: 5px;
 }
 
     h7:last-child {
