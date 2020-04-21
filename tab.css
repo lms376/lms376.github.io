@@ -1,0 +1,148 @@
+.tab {
+    font-size:14px;
+    width: 100%;
+}
+
+    .tab .title {
+        font-size: 36px;
+        text-transform: uppercase;
+        font-weight: 400;
+        text-align: right;
+    }
+
+#personal-information-tab .bio {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 300;
+    text-align: right;
+    font-size: 14px;
+}
+
+#personal-information-tab .contact-information {
+    text-align: right;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 24px;
+}
+
+#education-tab .title  {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.company-tab .title, #skills-tab .title, #interests-tab .title {
+    text-align: center;
+}
+
+#externships-tab .title {
+    margin-bottom: 50px;
+}
+
+#education-tab .school table, #leadership-involvement-tab table, #skills-tab table {
+    margin-top: 25px;
+    text-align: left;
+}
+
+#interests-tab table {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.company-tab table {
+    text-align: left;
+    margin-top: 18px;
+    font-weight: 300;
+}
+
+.company-tab p, #leadership-involvement-tab p, #interests-tab .description {
+    margin-top: 0;
+    font-weight: 300;
+}
+
+#education-tab .school table td, .company-tab table td, #leadership-involvement-tab table td, #interests-tab table td{
+    vertical-align: top;
+}
+
+#education-tab table td:first-child {
+    width: 190px;
+}
+
+#skills-tab table td:first-child {
+    width: 250px;
+}
+
+#interests-tab table td:first-child {
+    width: 143px;
+}
+
+#education-tab td:first-child, .company-tab td:first-child, #leadership-involvement-tab td:first-child,
+#skills-tab table td:first-child, #interests-tab table td:first-child {
+    text-align: right;
+    padding-right: 10px;
+}
+
+#education-tab .name, .company-tab .employer, #leadership-involvement-tab .name, #skills-tab .subtitle, #interests-tab .type {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#interests-tab .name {
+    text-transform: uppercase;
+    font-weight:400;
+    font-size: 14px;
+    margin-top:10px;
+}
+
+#interests-tab td .name:first-child {
+    margin-top: 0;
+}
+
+#interests-tab td {
+    padding-top: 20px;
+}
+
+#education-tab td {
+    padding-top: 20px;
+}
+
+#skills-tab .type {
+    font-size: 14px;
+}
+
+#education-tab .dates, .company-tab .dates, #leadership-involvement-tab .dates, #skills-tab .type, #interests-tab .dates{
+    font-weight: 300;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#education-tab .major, #leadership-involvement-tab .position{
+    font-style: italic;
+    font-weight: 300;
+}
+
+#education-tab .minor {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+#education-tab .attribute, #skills-tab .attribute {
+    float: left;
+    margin-right: 5px;
+    background-color: #fff;
+    padding: 2px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 3px rgba(1,1,1,0.1);
+}
+
+#skills-tab .attribute {
+    margin-bottom:0;
+}
+
+#skills-tab table td {
+    padding: 5px;
+}

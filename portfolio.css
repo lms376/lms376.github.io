@@ -1,0 +1,49 @@
+#sections {
+    background-color: none;
+    width: 540px;
+    margin:auto;
+    margin-top:50px;
+}
+
+.piece, .caption {
+    padding: 20px;
+    background-color: var(--content-bg-color);
+    border-radius: 5px;
+}
+
+.piece, .caption {
+    box-shadow: var(--shadow);
+}
+
+.piece {
+    margin-bottom: 15px;
+}
+
+.piece img {
+    width: 500px;
+    border-radius: 5px;
+}
+
+.caption {
+    margin-bottom: 50px;
+}
+
+.date {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.materials {
+    padding: 5px;
+}
+
+.material {
+    display: inline;
+    padding: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    font-weight: 300;
+}

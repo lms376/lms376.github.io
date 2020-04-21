@@ -2,368 +2,307 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" type="text/css" href="dark.css" />
-    <link id="currentStyleSheet" rel="stylesheet" type="text/css" href="light.css" title="light" />
-
+    <!-- styles -->
     <link rel="stylesheet" type="text/css" href="main.css" />
-    <link rel="stylesheet" type="text/css" href="section.css" />
-    <link rel="stylesheet" type="text/css" href="sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="tab.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
+    <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <meta charset="utf-8" />
+
+    <script>
+        function showTab(t) {
+            var tabs = document.getElementsByClassName("tab");
+            var tab = null;
+            for(i = 0; i < tabs.length; i++)
+            {
+                if (i == t) tab = tabs[i];
+                tabs[i].style.display = "none";
+            }
+            tab.style.display = "block";
+        }
+    </script>
+
     <title>Lillie Morrow Seigle</title>
-
-    <script>
-        function switchStyle() {
-            var style = document.getElementById('currentStyleSheet').title;
-
-            if (style == 'dark') {
-                document.getElementById('currentStyleSheet').setAttribute('href', 'light.css');
-                document.getElementById('styleButton').innerHTML = 'dark';
-                document.getElementById('currentStyleSheet').setAttribute('title', 'light');
-            }
-
-            else {
-                document.getElementById('currentStyleSheet').setAttribute('href', 'dark.css');
-                document.getElementById('styleButton').innerHTML = 'light';
-                document.getElementById('currentStyleSheet').setAttribute('title', 'dark');
-            }
-        }
-
-        function goToSection(s) {
-            var section = document.getElementById(s);
-            if (section.checked === false) {
-                section.checked = true;
-            }
-
-            setTimeout(function () { scroll(s + '-section'); }, 350);
-        }
-
-        function scroll(s) {
-            document.getElementById(s).scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-
-        function scrollToTop() {
-            scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        }
-
-        function closeAll() {
-            scrollToTop();
-
-            var sections = [document.getElementById("education"),
-            document.getElementById("professional-experience"),
-            document.getElementById("externships"),
-            document.getElementById("leadership-involvement"),
-            document.getElementById("skills"),
-            document.getElementById("interests")];
-
-            setTimeout(function () {
-                sections.forEach(function (item) {
-                    item.checked = false;
-                });
-            }, 300);            
-        }
-    </script>
-
-    <!--jquery from w3schools-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            // Add smooth scrolling to all links
-            $("a").on('click', function (event) {
-
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
-
-                    // Store hash
-                    var hash = this.hash;
-
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function () {
-
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                } // End if
-            });
-        });
-    </script>
 </head>
-<body>
-           
-    <div class="sidebar">
+<body onload="showTab(0)">
 
-        <div class="profile-img"><img src="https://raw.githubusercontent.com/lms376/lms376.github.io/master/profile-small.png" /></div>
+    <div id="contents">
+    <div class="header">
+    <a href="https://www.linkedin.com/in/lillie-morrow-seigle" title="LinkedIn" target="_blank">
+        <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="/Lillie%20Seigle%20Resume%20'20.pdf" title="Resume" target="_blank">
+        <i class="fas fa-file-alt"></i>
+    </a>
+    <a href="mailto:lilliemseigle@gmail.com" title="Email">
+        <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.github.com/lms376" title="GitHub" target="_blank">
+        <i class="fab fa-github"></i>
+    </a>
+    <a href="portfolio.html" title="Portfolio">
+        <i class="fas fa-paint-brush"></i>
+    </a>
+</div>
+    <div id="content">
+        <table><tbody><tr>
+            <td class="nav">
+                <input id="personal-information" name="info-type" type="radio" onclick="showTab(0)"
+                       value="personal information" checked>
+                <label for="personal-information">personal information</label>
 
-        <div class="link-icons">
-            <a href="https://www.linkedin.com/in/lillie-morrow-seigle" title="LinkedIn" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="/Lillie%20Seigle%20Resume%20'19.pdf" title="Resume" target="_blank">
-                <i class="far fa-file-alt"></i>
-            </a>
-            <a href="mailto:lms376@cornell.edu" title="Email">
-                <i class="far fa-envelope"></i>
-            </a>
+                <input type="radio" id="education" name="info-type" onclick="showTab(1)"
+                       value="education">
+                <label for="education">education</label>
 
-            <a href="https://www.github.com/lms376" title="GitHub" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
+                <input type="radio" id="professional-experience" name="info-type" onclick="showTab(2)"
+                       value="professional experience">
+                <label for="professional-experience">professional experience</label>
 
-        <ul class="links">
-            <li><button onclick="scrollToTop()">Personal Information</button></li>
-            <li><button onclick="goToSection('education')">Education</button></li>
-            <li><button onclick="goToSection('professional-experience')">Professional Experience</button></li>
-            <li><button onclick="goToSection('externships')">Externships</button></li>
-            <li><button onclick="goToSection('leadership-involvement')">Leadership & Campus Involvement</button></li>
-            <li><button onclick="goToSection('skills')">Skills</button></li>
-            <li><button onclick="goToSection('interests')">Interests</button></li>
-        </ul>
+                <input type="radio" id="externships" name="info-type" onclick="showTab(3)"
+                       value="externships">
+                <label for="externships">externships</label>
 
-        <button class="close-all" onclick="closeAll()">close all</button>
-        <button id="styleButton" class="theme-change" onclick="switchStyle()">dark</button>
-    </div>
-    
-    <!--personal information-->
-    <div class="section">
-        <h1>Lillie Morrow Seigle</h1>
-        <h5>
-            Peapack, NJ 07977&emsp;|&emsp;
-            (908) 285 8773&emsp;|&emsp;
-            lilliemseigle@gmail.com
-        </h5>
-        <h4>Software Engineering Intern at <a href="https://etailsolutions.com/" target="_blank">Etail Solutions</a></h4>
-        <p>
-            I am a senior at Cornell University's College of Engineering.
-            I expect to graduate in May of 2020 with a Bachelor's of Science in Computer Science and a minor in Horticulture.
-        </p>
-        <p>
-            My goal is to find somewhere I can use my knowledge of computer science and my problem solving ability to create something new or improve upon something in exciting ways.
-            I would love to be able to use my creativity to augment my technical skills wherever I end up.
-        </p>
-        <a id="education-section"></a>
-    </div>
+                <input type="radio" id="leadership-involvement" name="info-type" onclick="showTab(4)"
+                       value="leadership and involvement">
+                <label for="leadership-involvement">leadership and involvement</label>
 
-    <!--education-->
-    <div class="section">
-        <input id="education" class="toggle" type="checkbox">
-        <label for="education" class="label-toggle">Education</label>
-        <div class="collapsible-content">
-            <div class="section-inner">
-                <div class="divider"></div>
-                <b>Cornell University</b> 2016 - 2020
+                <input type="radio" id="skills" name="info-type" onclick="showTab(5)"
+                       value="skills">
+                <label for="skills">skills</label>
 
-                <h2>Bachelor of Science in Computer Science</h2>
-                <h3>Minor in Horticulture</h3>
-
-                <h6>Relevant Coursework</h6>
-                                
-                <h7>Multivariable Calculus</h7> 
-                <h7>Linear Algebra</h7> 
-                <h7>Differential Equations</h7>
-                <h7>Discrete Structures</h7> 
-                <h7>Functional Programming</h7> 
-                <h7>Computer System Organization & Programming</h7> 
-                <h7>Computer Graphics</h7>
-                <h7>Natural Language Processing</h7>
-
-                <div class="divider divider-small"></div>
-
-                <b>Bernards High School</b> 2012 - 2016
-                <h6>Honors</h6>
-
-                <h7>National Merit Scholarship Semifinalist</h7>
-                <a id="professional-experience-section"></a>
-            </div>
-        </div>
-    </div>
-
-    <!--professional experience-->
-    <div class="section">
-        <input id="professional-experience" class="toggle" type="checkbox">
-        <label for="professional-experience" class="label-toggle">Professional Experience</label>
-        <div class="collapsible-content">
-            <div class="section-inner">
-                <div class="divider"></div>
-                <b>Etail Solutions</b> SUMMER '17 - PRESENT
-                <h2>Software Engineering Intern</h2>
-                <p>
-                    I conducted sales channel integrations for Etail by developing programs to organize client data so that it was capable of operating within existing company software. The software was modified so that it could communicate using REST APIs.
-                </p>
-
-                <p>
-                    Additionally, I created an integration with Microsoft SharePoint. These user friendly web applications were located on customized client pages and displayed data gathered through SQL.
-                </p>
-
-                <p>
-                    To accomodate changes in marketplace retailer's software, I revised corporate software and developed tools to convert XSD definitions into XSLT files to transform and utilize client data.
-                </p>
-                
-                <p>
-                    In order to create a user friendly portal for clients to access and sort data for easier use, I developed ASP.NET MVC applications with individual user preference settings and storage.
-                </p>
-
-                <p>
-                    When clients were located a reasonable distance away, I would attend client visits to discuss possible changes and assess current implementations, as well as receive tours of their facilities and learn about their operations.
-                </p>
-                <a id="externships-section"></a>
-            </div>
-        </div>
-    </div>
-
-    <!--externships-->
-    <div class="section">
-        <input id="externships" class="toggle" type="checkbox">
-        <label for="externships" class="label-toggle">Externships</label>
-        <div class="collapsible-content">
-            <div class="section-inner">
-                <div class="divider"></div>
-                <b>Pfizer</b> OCTOBER 8, 2018
-                <h2>Information Technology Extern</h2>
-                <p>
-                    Throughout the day, I sat in on project meetings and was presented information about current and potential new projects.
-                </p>
-                <p>
-                    In addition, I met with several different employees one-on-one to learn about different aspects of the company and to discuss their roles and responsibilities and what skills are required for their jobs.
-                </p>
-                <a id="leadership-involvement-section"></a>
-            </div>
-        </div>
-    </div>
-
-    <!--leadership & campus involvement-->
-    <div class="section">
-        <input id="leadership-involvement" class="toggle" type="checkbox">
-        <label for="leadership-involvement" class="label-toggle">Leadership & Campus Involvement</label>
-        <div class="collapsible-content">
-            <div class="section-inner">
-                <div class="divider"></div>
-                <b>Beekeeping Club at Cornell</b> FALL '17 - SPRING '18
-                <h2>Vice President</h2>
-
-                <p>
-                    I organized biweekly meetings for around fifty people and communicated information to existing and potential members through marketing channels including emailing, tabling, and club presentations.
-                </p>
-                <p>
-                    I also ran social media accounts and general marketing including apparel orders and advertisements.
-                </p>
-                <p>
-                    Additionally, I supervised and assisted with hive inspections weekly and honey extractions several times per year.
-                </p>
-
-                <div class="divider divider-small"></div>
-
-                <b>Orientation Steering Committee</b> FALL '17
-                <h2>Orientation Leader</h2>
-
-                <p>
-                    I received daily training on the orientation of incoming students to ease their transition into higher education and help them to understand the resources available to them on Cornell’s campus.
-                </p>
-                <p>
-                    Over the course of a few weeks, I introduced a group of ten new engineering students to Cornell through information sessions and tours.
-                </p>
-                <a id="skills-section"></a>
-            </div>
-        </div>
-    </div>
-
-    <!--skills-->
-    <div class="section">
-        <input id="skills" class="toggle" type="checkbox">
-        <label for="skills" class="label-toggle">Skills</label>
-        <div class="collapsible-content">
-            <div class="section-inner">
-                <div class="divider"></div>
-                <h6>Programming Languages</h6>
-                <table class="p-languages">
+                <input type="radio" id="interests" name="info-type" onclick="showTab(6)"
+                       value="interests">
+                <label for="interests">interests</label>
+            </td>
+            <td class="info">
+                <div class="tab" id="personal-information-tab">
+                    <div class="title">Lillie Morrow Seigle</div>
+                    <div class="bio">
+                        <p>I am a senior at Cornell University's College of Engineering.
+                            I expect to graduate in May of 2020 with a Bachelor's of Science in Computer Science
+                            and a minor in Horticulture. </p>
+                        <p>My goal is to find somewhere I can use my knowledge of computer science and my problem
+                            solving ability to create something new or improve upon something in exciting ways.
+                            I would love to be able to use my creativity to augment my technical skills
+                            wherever I end up.</p>
+                    </div>
+                    <div class="contact-information">
+                        Peapack and Gladstone, NJ 07977 <br/>
+                        (908) 285 8773 <br/>
+                        lilliemseigle@gmail.com <br/>
+                    </div>
+                </div>
+                <div class="tab" id="education-tab">
+                    <div class="title">Education</div>
+                    <div class="school">
+                        <table><tbody><tr>
+                            <td>
+                                <div class="name">Cornell University</div>
+                                <div class="dates">2016 - 2020</div>
+                                <div class="major">Bachelor of Science in Computer Science</div>
+                                <div class="minor">Minor in Horticulture</div>
+                            </td>
+                            <td>
+                                <div class="attribute">Multivariable Calculus</div>
+                                <div class="attribute">Linear Algebra</div>
+                                <div class="attribute">Differential Equations</div>
+                                <div class="attribute">Discrete Structures</div>
+                                <div class="attribute">Functional Programming</div>
+                                <div class="attribute">Computer System Organization & Programming</div>
+                                <div class="attribute">Computer Graphics</div>
+                                <div class="attribute">Natural Language Processing</div>
+                            </td>
+                        </tr><tr>
+                            <td class="left">
+                                <div class="name">Bernards High School</div>
+                                <div class="dates">2012 - 2016</div>
+                            </td>
+                            <td>
+                                <div class="attribute">National Merit Semifinalist</div>
+                            </td>
+                        </tr></tbody></table>
+                    </div>
+                </div>
+                <div class="tab company-tab" id="professional-experience-tab">
+                    <div class="title">Professional Experience</div>
+                    <table><tbody><tr>
+                        <td>
+                            <div class="employer">Etail Solutions</div>
+                            <div class="dates">Summer 2017 - Spring 2020</div>
+                        </td>
+                        <td>
+                            <div class="responsibilities">
+                                <p>I conducted sales channel integrations for Etail by developing programs to organize
+                                    client data so that it was capable of operating within existing company software.
+                                    The software was modified so that it could communicate using REST APIs.</p>
+                                <p>Additionally, I created an integration with Microsoft SharePoint. These user friendly
+                                    web applications were located on customized client pages and displayed data gathered
+                                    through SQL.</p>
+                                <p>To accomodate changes in marketplace retailer's software, I revised corporate
+                                    software and developed tools to convert XSD definitions into XSLT files to transform
+                                    and utilize client data.</p>
+                                <p>In order to create a user friendly portal for clients to access and sort data for
+                                    easier use, I developed ASP.NET MVC applications with individual user preference
+                                    settings and storage. </p>
+                                <p>When clients were located a reasonable distance away, I would attend client visits
+                                    to discuss possible changes and assess current implementations, as well as receive
+                                    tours of their facilities and learn about their operations.</p>
+                            </div>
+                        </td>
+                    </tr></tbody></table>
+                </div>
+                <div class="tab company-tab" id="externships-tab">
+                    <div class="title">Externships</div>
+                    <table><tbody><tr>
+                        <td>
+                            <div class="employer">Pfizer</div>
+                            <div class="dates">October 2018</div>
+                        </td>
+                        <td>
+                            <div class="responsibilities">
+                                <p>I sat in on project meetings and was presented information about current and
+                                    potential new projects.</p>
+                                <p>In addition, I met with several different employees one-on-one to learn about
+                                    different aspects of the company and to discuss their roles and responsibilities
+                                    and what skills are required for their jobs.</p>
+                            </div>
+                        </td>
+                    </tr></tbody></table>
+                </div>
+                <div class="tab" id="leadership-involvement-tab">
+                    <div class="title">Leadership and Involvement</div>
+                    <table><tbody>
                     <tr>
                         <td>
-                            <table class="p-languages-category">
-                                <tr><th>Fluent</th></tr>
-                                <tr>
-                                    <td>
-                                        <h7>C#</h7>
-                                        <h7>Java</h7>
-                                    </td>
-                                </tr>
-                            </table>
+                            <div class="name">Beekeeping Club at Cornell</div>
+                            <div class="dates">Fall 2017 - Spring 2018</div>
+                            <div class="position">Vice President</div>
                         </td>
                         <td>
-                            <table class="p-languages-category">
-                                <tr><th>Proficient</th></tr>
-                                <tr>
-                                    <td>
-                                        <h7>Python</h7>
-                                        <h7>HTML5</h7>
-                                        <h7>CSS</h7>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td>
-                            <table class="p-languages-category">
-                                <tr><th>Familiar</th></tr>
-                                <tr>
-                                    <td>
-                                        <h7>OCaml</h7>
-                                        <h7>JavaScript</h7>
-                                    </td>
-                                </tr>
-                            </table>
+                            <div class="responsibilities">
+                                <p>I organized biweekly meetings for around fifty people and communicated information
+                                    to existing and potential members through marketing channels including emailing,
+                                    tabling, and club presentations.</p>
+                                <p>I also ran social media accounts and general marketing including apparel orders
+                                    and advertisements. </p>
+                                <p>Additionally, I supervised and assisted with hive inspections weekly and honey
+                                    extractions several times per year.</p>
+                            </div>
                         </td>
                     </tr>
-                </table>
-
-                <h6>Spoken Languages</h6>
-                <table class="p-languages">
                     <tr>
                         <td>
-                            <table class="p-languages-category">
-                                <tr><th>Limited Working Proficiency</th></tr>
-                                <tr>
-                                    <td>
-                                        <h7>French</h7>
-                                    </td>
-                                </tr>
-                            </table>
+                            <div class="name">Orientation Steering Committee</div>
+                            <div class="dates">Fall 2017</div>
+                            <div class="position">Orientation Leader</div>
+                        </td>
+                        <td>
+                            <div class="responsibilities">
+                                <p>I received daily training on the orientation of incoming students to ease their
+                                    transition into higher education and help them to understand the resources available
+                                    to them on Cornell’s campus.</p>
+                                <p>Over the course of a few weeks, I introduced a group of ten new engineering students
+                                    to Cornell through information sessions and tours.</p>
+                            </div>
                         </td>
                     </tr>
-                </table>
-                <a id="interests-section"></a>
-            </div>
-        </div>
+                    </tbody></table>
+                </div>
+                <div class="tab" id="skills-tab">
+                    <div class="title">Skills</div>
+                    <table><tbody>
+                    <tr>
+                        <td>
+                            <div class="subtitle">Programming Languages</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="type">Fluent</div>
+                        </td>
+                        <td>
+                            <div class="attribute">C#</div>
+                            <div class="attribute">Java</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="type">Proficient</div>
+                        </td>
+                        <td>
+                            <div class="attribute">Python</div>
+                            <div class="attribute">HTML</div>
+                            <div class="attribute">CSS</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="type">Familiar</div>
+                        </td>
+                        <td>
+                            <div class="attribute">OCaml</div>
+                            <div class="attribute">JavaScript</div>
+                        </td>
+                    </tr>
+                    </tbody></table>
+                    <table><tbody>
+                    <tr>
+                        <td><div class="subtitle">Spoken Languages</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="type">Fluent</div>
+                        </td>
+                        <td>
+                            <div class="attribute">English</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="type">Limited Working Proficiency</div>
+                        </td>
+                        <td>
+                            <div class="attribute">French</div>
+                        </td>
+                    </tr>
+                    </tbody></table>
+                </div>
+                <div class="tab" id="interests-tab">
+                    <div class="title">Interests</div>
+                    <table><tbody>
+                    <tr>
+                        <td>
+                            <div class="type">Volunteering</div>
+                        </td>
+                        <td>
+                            <div class="name">Mane Stream NJ</div>
+                            <div class="dates">2010 - 2016</div>
+                            <div class="description">Equine Assisted Therapy for adults and children with special needs.</div>
+                            <div class="name">Raritan Headwaters Association</div>
+                            <div class="dates">2012-2016</div>
+                            <div class="description">Watershed maintenance and community outreach</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="type">Hobbies</div>
+                        </td>
+                        <td>
+                            <div class="name">Varsity Ski Racing</div>
+                            <div class="dates">2012 - 2016</div>
+                            <div class="name">Competitive Figure Skating</div>
+                            <div class="name">Plant Propagation</div>
+                        </td>
+                    </tr>
+                    </tbody></table>
+                </div>
+            </td>
+        </tr></tbody></table>
+    </div>
     </div>
 
-    <!--interests-->
-    <div class="section">
-        <input id="interests" class="toggle" type="checkbox">
-        <label for="interests" class="label-toggle">Interests</label>
-        <div class="collapsible-content">
-            <div class="section-inner interests-section-inner">
-                <div class="divider"></div>
-                <h6>Volunteering</h6>
-                <h8><a href="https://www.manestreamnj.org/">Mane Stream</a> Equine Assisted Therapy</h8> 2010 - 2016
-                <br/>
-                <h8>Watershed Maintenence with <a href="https://www.raritanheadwaters.org/">Raritan Headwaters Association</a></h8> 2012 - 2016
-                <h6>Hobbies</h6>
-                <h8>Varsity Ski Racing</h8> 2012 - 2016
-                <br/>
-                <h8>Tennis</h8>
-                <br/>
-                <h8>Plant Propagation</h8>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
