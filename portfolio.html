@@ -17,24 +17,30 @@
 <body>
 
     <div id="sections">
-        <div class="header">
-            <a href="https://www.linkedin.com/in/lillie-morrow-seigle" title="LinkedIn" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="/Lillie%20Seigle%20Resume%20'20.pdf" title="Resume" target="_blank">
-                <i class="fas fa-file-alt"></i>
-            </a>
-            <a href="mailto:lilliemseigle@gmail.com" title="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://www.github.com/lms376" title="GitHub" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="index.html" title="Home">
-                <i class="fas fa-home"></i>
-            </a>
+        <div class="headers">
+            <div class="header nav-header">
+                <a href="https://www.linkedin.com/in/lillie-morrow-seigle" title="LinkedIn" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="/Lillie%20Seigle%20Resume%20'20.pdf" title="Resume" target="_blank">
+                    <i class="fas fa-file-alt"></i>
+                </a>
+                <a href="mailto:lilliemseigle@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.github.com/lms376" title="GitHub" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="index.html" title="Home">
+                    <i class="fas fa-home"></i>
+                </a>
+            </div>
+            <div class="header filter-header">
+                <button onclick="showAll()" title="Remove filter"><i class="fas fa-minus-circle"></i></button>
+                SHOWING: <span id="showing">all</span>
+            </div>
         </div>
-        <div class="section">
+        <div class="section watercolor">
             <div class="piece">
                 <a href="/site/portfolio-images/tulip.jpg" target="_blank"><img src="portfolio-images/tulip.jpg"></a>
             </div>
@@ -42,11 +48,11 @@
                 <div class="title">Tulip</div>
                 <div class="date">02-23-20</div>
                 <div class="materials">
-                    <div class="material">watercolor</div>
+                    <button class="material" onclick="showOnly('watercolor')">watercolor</button>
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section ink">
             <div class="piece">
                 <a href="/site/portfolio-images/bluebell.jpg" target="_blank"><img src="portfolio-images/bluebell.jpg"></a>
             </div>
@@ -54,11 +60,11 @@
                 <div class="title">Virginia Bluebell</div>
                 <div class="date">04-19-20</div>
                 <div class="materials">
-                    <div class="material">ink</div>
+                    <button class="material" onclick="showOnly('ink')">ink</button>
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section ink">
             <div class="piece">
                 <a href="/site/portfolio-images/begonia-ink.jpg" target="_blank"><img src="portfolio-images/begonia-ink.jpg"></a>
             </div>
@@ -66,11 +72,11 @@
                 <div class="title">Begonia</div>
                 <div class="date">04-11-20</div>
                 <div class="materials">
-                    <div class="material">ink</div>
+                    <button class="material" onclick="showOnly('ink')">ink</button>
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section watercolor">
             <div class="piece">
                 <a href="/site/portfolio-images/begonia-watercolor.jpg" target="_blank"><img src="portfolio-images/begonia-watercolor.jpg"></a>
             </div>
@@ -78,11 +84,11 @@
                 <div class="title">Begonia Blossom</div>
                 <div class="date">04-20-20</div>
                 <div class="materials">
-                    <div class="material">watercolor</div>
+                    <button class="material" onclick="showOnly('watercolor')">watercolor</button>
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section watercolor">
             <div class="piece">
                 <a href="/site/portfolio-images/pinecone.jpg" target="_blank"><img src="portfolio-images/pinecone.jpg"></a>
             </div>
@@ -90,10 +96,36 @@
                 <div class="title">Pinecone</div>
                 <div class="date">04-21-20</div>
                 <div class="materials">
-                    <div class="material">watercolor</div>
+                    <button class="material" onclick="showOnly('watercolor')">watercolor</button>
                 </div>
             </div>
         </div>
     </div>
 
 </body>
+
+<script>
+    function showOnly(type) {
+        document.getElementById("showing").textContent = type;
+
+        var sections = document.getElementsByClassName("section");
+        for (i = 0; i < sections.length; i++) {
+            var section = sections[i];
+            if (section.classList.contains(type)) {
+                section.style.display = "block";
+            } else {
+                section.style.display = "none";
+            }
+        }
+    }
+
+    function showAll() {
+        document.getElementById("showing").textContent = "all";
+
+        var sections = document.getElementsByClassName("section");
+        for (i = 0; i < sections.length; i++) {
+            var section = sections[i];
+            section.style.display = "block";
+        }
+    }
+</script>
