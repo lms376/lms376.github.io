@@ -84,12 +84,17 @@
 #showing {
     font-weight: 300;
     text-transform: uppercase;
+    display: inline-block;
+    width: 110px;
 }
 
 .filter-header button {
     border: none;
     color: var(--color);
     transition-duration: 1s;
+}
+
+.filter-header button:first-child {
     margin-right:10px;
 }
 
