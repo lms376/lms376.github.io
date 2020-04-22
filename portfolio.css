@@ -86,7 +86,6 @@
     font-weight: 300;
     text-transform: uppercase;
     display: inline-block;
-    width: 220px;
 }
 
 .filter-header button {
@@ -96,8 +95,8 @@
     background-color: var(--content-bg-color);
 }
 
-.filter-header button:first-child {
-    margin-right:10px;
+.filter-header button:nth-child(3) {
+    margin-right: 10px;
 }
 
 .filter-header button:hover {
