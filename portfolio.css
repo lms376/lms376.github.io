@@ -1,6 +1,6 @@
 #sections {
-    background-color: none;
-    width: 650px;
+    width: 70%;
+    min-width: 487px;
     margin:auto;
     margin-top:50px;
 }
@@ -20,7 +20,7 @@
 }
 
 .piece img {
-    width: 610px;
+    width: 100%;
     border-radius: 5px;
 }
 
@@ -59,7 +59,8 @@
 }
 
 .header {
-    float: left;
+    width: 100%;
+    text-align: left;
 }
 
 .headers {
@@ -70,16 +71,18 @@
  }
 
 .filter-header {
-    width: 60%;
     text-align: left;
-    padding: 15px;
     font-size: 14px;
     font-weight: 400;
+    display: inline-block;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    padding-left: 10px;
 }
 
 .nav-header {
-    margin-right: 45px;
-    margin-right: calc(40% - 210px);
+    display: inline-block;
+    width: 170px;
+    margin-left: 15px;
 }
 
 #showing {
@@ -97,6 +100,8 @@
 
 .filter-header button:nth-child(3) {
     margin-right: 10px;
+    border-right: solid 1px rgba(0,0,0,0.1);
+    padding-right: 16px;
 }
 
 .filter-header button:hover {
