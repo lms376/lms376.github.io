@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="../main.css" />
     <link rel="stylesheet" type="text/css" href="portfolio.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
@@ -23,7 +23,7 @@
                 <a href="https://www.linkedin.com/in/lillie-morrow-seigle" title="LinkedIn" target="_blank">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="/Lillie%20Seigle%20Resume%20'20.pdf" title="Resume" target="_blank">
+                <a href="https://lillie-seigle.com/Lillie%20Seigle%20Resume%20'20.pdf" title="Resume" target="_blank">
                     <i class="fas fa-file-alt"></i>
                 </a>
                 <a href="mailto:lilliemseigle@gmail.com" title="Email">
@@ -32,14 +32,15 @@
                 <a href="https://www.github.com/lms376" title="GitHub" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="index.html" title="Home">
+                <a href="https://lillie-seigle.com/" title="Home">
                     <i class="fas fa-home"></i>
                 </a>
             </div>
             <div class="filter-header">
                 <button onclick="showAll()" title="Remove filter"><i class="fas fa-minus-circle"></i></button>
                 <button onclick="showOnly('watercolor')" title="Watercolor"><i class="fas fa-paint-brush"></i></button>
-                <button onclick="showOnly('ink')" title="Ink"><i class="fas fa-pen"></i></button>
+                <button onclick="showOnly('ink')" title="Ink"><i class="fas fa-pen-alt"></i></button>
+                <button onclick="showOnly('colored-pencil')" title="Colored Pencil"><i class="fas fa-pen"></i></button>
                 <button onclick="showOnly('charcoal')" title="Charcoal"><i class="fas fa-pencil-alt"></i></button>
                 SHOWING: <div id="showing">all</div>
 
@@ -48,7 +49,7 @@
         </div>
         <div class="section watercolor">
             <div class="piece">
-                <a href="/portfolio-images/tulip.jpg" target="_blank"><img src="portfolio-images/tulip.jpg"></a>
+                <a href="/images/tulip.jpg" target="_blank"><img src="images/tulip.jpg"></a>
             </div>
             <div class="caption">
                 <div class="title">Tulip</div>
@@ -60,7 +61,7 @@
         </div>
         <div class="section ink">
             <div class="piece">
-                <a href="/portfolio-images/bluebell.jpg" target="_blank"><img src="portfolio-images/bluebell.jpg"></a>
+                <a href="/images/bluebell.jpg" target="_blank"><img src="images/bluebell.jpg"></a>
             </div>
             <div class="caption">
                 <div class="title">Virginia Bluebell</div>
@@ -70,21 +71,9 @@
                 </div>
             </div>
         </div>
-        <div class="section ink">
-            <div class="piece">
-                <a href="/portfolio-images/begonia-ink.jpg" target="_blank"><img src="portfolio-images/begonia-ink.jpg"></a>
-            </div>
-            <div class="caption">
-                <div class="title">Begonia</div>
-                <div class="date">04-11-20</div>
-                <div class="materials">
-                    <button class="material" onclick="showOnly('ink')">ink</button>
-                </div>
-            </div>
-        </div>
         <div class="section watercolor">
             <div class="piece">
-                <a href="/portfolio-images/begonia-watercolor.jpg" target="_blank"><img src="portfolio-images/begonia-watercolor.jpg"></a>
+                <a href="/images/begonia-watercolor.jpg" target="_blank"><img src="images/begonia-watercolor.jpg"></a>
             </div>
             <div class="caption">
                 <div class="title">Begonia Blossom</div>
@@ -94,21 +83,9 @@
                 </div>
             </div>
         </div>
-        <div class="section watercolor">
-            <div class="piece">
-                <a href="/portfolio-images/pinecone-watercolor.jpg" target="_blank"><img src="portfolio-images/pinecone-watercolor.jpg"></a>
-            </div>
-            <div class="caption">
-                <div class="title">Pinecone</div>
-                <div class="date">04-21-20</div>
-                <div class="materials">
-                    <button class="material" onclick="showOnly('watercolor')">watercolor</button>
-                </div>
-            </div>
-        </div>
         <div class="section ink">
             <div class="piece">
-                <a href="/portfolio-images/pinecone-ink.jpg" target="_blank"><img src="portfolio-images/pinecone-ink.jpg"></a>
+                <a href="/images/pinecone-ink.jpg" target="_blank"><img src="images/pinecone-ink.jpg"></a>
             </div>
             <div class="caption">
                 <div class="title">Pinecone</div>
@@ -120,7 +97,7 @@
         </div>
         <div class="section charcoal">
             <div class="piece">
-                <a href="/portfolio-images/sage.jpg" target="_blank"><img src="portfolio-images/sage.jpg"></a>
+                <a href="/images/sage.jpg" target="_blank"><img src="images/sage.jpg"></a>
             </div>
             <div class="caption">
                 <div class="title">Sage</div>
@@ -130,6 +107,19 @@
                 </div>
             </div>
         </div>
+        <div class="section colored-pencil">
+            <div class="piece">
+                <a href="/images/forget-me-not.jpg" target="_blank"><img src="images/forget-me-not.jpg"></a>
+            </div>
+            <div class="caption">
+                <div class="title">Forget Me Not</div>
+                <div class="date">04-30-20</div>
+                <div class="materials">
+                    <button class="material" onclick="showOnly('colored-pencil')">colored pencil</button>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </body>
