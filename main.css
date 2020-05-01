@@ -1,9 +1,15 @@
 ﻿:root {
     --color: #3a4750;
     --accent-color: #c38e8e;
-    --bg-color: #8ab7ab;
+    --bg-color: #9dafbb;
     --content-bg-color: #eee;
-    --shadow: 1px 1px 10px 5px rgba(0,0,0,0.15);
+
+    --button-bg-color: rgba(255, 255, 255, 0.6823529411764706);
+    --inset-bg-color: #eaeaea;
+
+    --content-shadow: 1px 1px 10px 5px rgba(0,0,0,0.15);
+    --outer-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.2);
+    --inner-shadow: rgba(0, 0, 0, .2) 0px 0px 3px 0px;
 }
 
 body {
@@ -21,33 +27,27 @@ body {
 
 
 .header {
-    padding: 10px 0 15px 0;
-    width: 180px;
+    padding: 20px;
+    width: 700px;
     margin: auto;
     background-color: var(--content-bg-color);
     border-radius: 5px;
-    box-shadow: var(--shadow);
-    margin-bottom:25px;
+    box-shadow: var(--content-shadow);
+    margin-bottom: 25px;
+    height: 70px;
 }
-
-    .header .title {
-        text-transform: uppercase;
-        margin-bottom: 10px;
-        font-size: 26px;
-        font-weight: 300;
-    }
 
     .header a {
         text-decoration: none;
         text-transform: uppercase;
         color: var(--color);
-        background-color: #fff;
+        background-color: var(--button-bg-color);
         border-radius: 2px;
         box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         padding: 5px;
-        margin-right: 10px;
         font-size: 12px;
         transition-duration: 1s;
+        margin-right: 4px;
     }
 
         .header a:last-child {
@@ -55,9 +55,60 @@ body {
         }
 
     .header a:hover {
-        box-shadow: rgba(0, 0, 0, .2) 0px 0px 3px 0px;
+        box-shadow: var(--inner-shadow);
         color: var(--accent-color);
     }
+
+.buttons.header-section {
+    width: calc(25% - 40px);
+    padding: 20px;
+}
+
+.header-section {
+    float: left;
+    background-color: var(--inset-bg-color);
+    padding: 15px;
+    border-radius: 3px;
+    height: 30px;
+    box-shadow: var(--outer-shadow);
+    margin-right: 20px;
+}
+
+.pic.header-section {
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+}
+
+.pic .inner {
+    height: 40px;
+}
+
+.inner {
+    background-color: var(--button-bg-color);
+    border-radius: 3px;
+    padding: 5px;
+    height: 30px;
+    box-shadow: var(--inner-shadow);
+}
+
+.header img {
+    max-width: 100%;
+    border-radius: 3px;
+}
+
+.header-section:nth-child(3) {
+    margin-right: 0;
+}
+
+.name.header-section {
+    height: 40px;
+    text-transform: uppercase;
+    font-size: 24px;
+    word-spacing: 10px;
+    font-weight: 300;
+    width: 385px;
+}
 
 #content {
     background-color: var(--content-bg-color);
@@ -65,7 +116,7 @@ body {
     height: 450px;
     padding: 20px;
     margin: auto;
-    box-shadow: var(--shadow);
+    box-shadow: var(--content-shadow);
     border-radius:5px;
 }
 
@@ -84,11 +135,11 @@ body {
     width: 25%;
     padding-right: 20px;
     padding-left: 20px;
-    background-color: #eaeaea;
-    box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.2);
+    background-color: var(--inset-bg-color);
+    box-shadow: var(--outer-shadow);
     border-radius: 5px;
     max-height: 450px;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
     .nav input[type="radio"] {
@@ -96,13 +147,13 @@ body {
     }
 
     .nav input[type="radio"]:checked + label {
-        box-shadow: rgba(0, 0, 0, .2) 0px 0px 3px 0px;
-        background-color: #ffffffad;
+        box-shadow: var(--inner-shadow);
+        background-color: var(--button-bg-color);
     }
 
     .nav label:hover {
-        box-shadow: rgba(0, 0, 0, .2) 0px 0px 3px 0px;
-        background-color: #ffffffad;
+        box-shadow: var(--inner-shadow);
+        background-color: var(--button-bg-color);
     }
 
     .nav label {
@@ -118,27 +169,6 @@ body {
         box-shadow: rgba(0, 0, 0, .5) 0px 2px 3px -3px;
         border-radius:5px;
         transition-duration: 1s;
-    }
-
-.icons {
-    width: 15px;
-    padding-right:10px;
-    font-size: 15px;
-    box-shadow: rgba(0, 0, 0, .5) 3px 0px 3px -3px;
-}
-
-    .icons ul li {
-        margin-bottom: 30px;
-    }
-
-    .icons ul li a {
-        color: var(--accent-color);
-        text-decoration: none;
-        transition-duration: 1s;
-    }
-
-    .icons ul li a:hover {
-        color: var(--color);
     }
 
 .info {
