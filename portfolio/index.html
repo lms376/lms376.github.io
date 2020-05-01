@@ -148,22 +148,33 @@
         document.getElementById("showing").textContent = type;
 
         var sections = document.getElementsByClassName("section");
-        for (i = 0; i < sections.length; i++) {
-            var section = sections[i];
-            if (section.classList.contains(type) || section.classList.contains('about')) {
-                section.style.display = "block";
-            } else {
-                section.style.display = "none";
-            }
-        }
+        var visible = hide(sections, type);
+        setTimeout(() => { show(visible); }, 50);
     }
 
     function showAll() {
         document.getElementById("showing").textContent = "all";
 
         var sections = document.getElementsByClassName("section");
+        var visible = hide(sections, "section");
+        setTimeout(() => { show(visible); }, 50);
+    }
+
+    function hide(sections, type) {
+        var visible = [];
         for (i = 0; i < sections.length; i++) {
             var section = sections[i];
+            if (section.classList.contains(type)) {
+                visible.push(section);
+            }
+            if (!section.classList.contains('about')) section.style.display = "none";
+        }
+        return visible;
+    }
+
+    function show(visible) {
+        for(j = 0; j < visible.length; j++) {
+            var section = visible[j];
             section.style.display = "block";
         }
     }
