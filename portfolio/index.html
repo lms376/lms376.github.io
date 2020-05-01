@@ -47,6 +47,25 @@
             </div>
             </div>
         </div>
+        <div class="section about">
+            <div class="caption">
+                <div class="heading">
+                        <div class="heading-section pic">
+                            <img src="images/profile-small.png">
+                        </div>
+                        <div class="heading-section name">
+                            Lillie M Seigle
+                        </div>
+                </div>
+                <p>I am a senior at Cornell University's College of Engineering. I will graduate in May of 2020
+                    with a Bachelor's of Science in Computer Science and a minor in Horticulture. I hope to find a career
+                    where I am able to use my creative skills in addition to the technical abilities
+                    I have acquired in my schooling so far.
+                    </p>
+                <p>The art classes I've taken at Cornell include Introduction to Painting, the Art of Horticulture,
+                    and an Intensive Study in Botanical Illustration.</p>
+            </div>
+        </div>
         <div class="section watercolor">
             <div class="piece">
                 <a href="/images/tulip.jpg" target="_blank"><img src="images/tulip.jpg"></a>
@@ -131,7 +150,7 @@
         var sections = document.getElementsByClassName("section");
         for (i = 0; i < sections.length; i++) {
             var section = sections[i];
-            if (section.classList.contains(type)) {
+            if (section.classList.contains(type) || section.classList.contains('about')) {
                 section.style.display = "block";
             } else {
                 section.style.display = "none";
