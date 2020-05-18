@@ -53,18 +53,14 @@ body {
         }
     }
 
-.piece, .caption {
+.caption {
     padding: 20px;
     background-color: var(--content-bg-color);
     border-radius: 5px;
 }
 
-.piece, .caption {
+.caption {
     box-shadow: var(--content-shadow);
-}
-
-.piece {
-    margin-bottom: 15px;
 }
 
 .piece img {
@@ -72,8 +68,48 @@ body {
     border-radius: 5px;
 }
 
+.piece:nth-child(3) {
+    margin-right: 0;
+}
+.piece {
+    width: 200px;
+    margin-right: 30px;
+}
+.ink .piece:first-child, .mixed .piece:first-child {
+    width: 133px;
+}
+
+.ink .piece {
+    width: 200px;
+}
+
+.ink .piece:nth-child(3), .mixed .piece:nth-child(2) {
+    width: 267px;
+}
+
+.charcoal .piece:nth-child(2) {
+    margin-right: 0;
+}
+
+.charcoal .piece {
+    width: 315px;
+}
+
+.piece {
+    height: 240px;
+    float: left;
+}
+
 .caption {
     margin-bottom: 50px;
+}
+
+.watercolor .caption, .ink .caption, .mixed .caption {
+    height: 360px;
+}
+
+.charcoal .caption {
+    height: 475px;
 }
 
 .date {
@@ -115,26 +151,29 @@ body {
     font-weight: 300;
 }
 
-.about .caption {
+.caption {
     font-weight: 300;
     font-size: 14px;
 }
 
 .about .heading {
-    height: 100%;
     min-height: 95px;
-    padding: 20px;
-    background-color: var(--inset-bg-color);
-    box-shadow: var(--outer-shadow);
-    border-radius: 5px;
-    margin-bottom: 20px;
 }
 
-.about .heading-section.pic {
+.heading {
+        min-height: 60px;
+        padding: 20px;
+        background-color: var(--inset-bg-color);
+        box-shadow: var(--outer-shadow);
+        border-radius: 5px;
+        margin-bottom: 20px;
+}
+
+.heading-section.pic {
     width: 75px;
 }
 
-.about .heading-section {
+.heading-section {
     float: left;
     height: 75px;
     padding: 10px;
@@ -214,3 +253,24 @@ body {
 .filter-header button:hover {
     color: var(--accent-color);
 }
+
+.heading-section.section-heading {
+    height: 40px;
+    line-height: 40px;
+    font-size: 32px;
+    width: calc(100% - 20px);
+}
+
+.gallery .title {
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.gallery .date {
+    font-size: 12px;
+}
+
+.info {
+    padding: 0;
+    height: auto;
+    }
