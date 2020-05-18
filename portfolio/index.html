@@ -11,6 +11,7 @@
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="../main.css" />
     <link rel="stylesheet" type="text/css" href="portfolio.css" />
+    <link rel="stylesheet" type="text/css" href="popups.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
     <!-- fonts -->
@@ -48,6 +49,7 @@
                 <button onclick="showOnly('ink')" title="Ink"><i class="fas fa-pen-alt"></i></button>
                 <button onclick="showOnly('charcoal')" title="Charcoal"><i class="fas fa-pen"></i></button>
                 <button onclick="showOnly('mixed')" title="Colored Pencil and Mixed Media"><i class="fas fa-pencil-alt"></i></button>
+                <div class="spacer"></div>
                 SHOWING: <div id="showing">all</div>
 
             </div>
@@ -84,25 +86,49 @@
                 <div class="gallery">
 
                     <div class="piece">
-                        <img src="../portfolio/images/tulip_3-20.png">
+                        <img src="../portfolio/images/tulip_3-20.png" onclick="openModal('watercolorModal');currentSlide(1)">
                         <div class="info">
-                            <div class="title">Tulip</div>
+                            <div class="title"><i>Tulipa sp.</i></div>
                             <div class="date">March, 2020</div>
                         </div>
                     </div>
                     <div class="piece">
-                        <img src="../portfolio/images/begonia_4-20.png">
+                        <img src="../portfolio/images/begonia_4-20.png" onclick="openModal('watercolorModal');currentSlide(2)">
                         <div class="info">
-                            <div class="title">Begonia</div>
+                            <div class="title"><i>Begonia sp.</i></div>
                             <div class="date">April, 2020</div>
                         </div>
                     </div>
                     <div class="piece">
-                        <img src="../portfolio/images/hellebore_5-20.png">
+                        <img src="../portfolio/images/hellebore_5-20.png" onclick="openModal('watercolorModal');currentSlide(3)">
                         <div class="info">
-                            <div class="title">Hellebore</div>
+                            <div class="title"><i>Helleborus sp.</i></div>
                             <div class="date">May, 2020</div>
                         </div>
+                    </div>
+                </div>
+
+                <div id="watercolorModal" class="modal">
+                    <span class="close cursor" onclick="closeModal('watercolorModal')">&times;</span>
+                    <div class="modal-content">
+
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 3</div>
+                            <img src="../portfolio/images/tulip_3-20.png" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="../portfolio/images/begonia_4-20.png" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="../portfolio/images/hellebore_5-20.png" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 1, 3)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 1, 3)">&#10095;</a>
                     </div>
                 </div>
             </div>
@@ -118,25 +144,49 @@
                 <div class="gallery">
 
                     <div class="piece">
-                        <img src="../portfolio/images/bluebell_4-20.png">
+                        <img src="../portfolio/images/bluebell_4-20.png" onclick="openModal('inkModal');currentSlide(4)">
                         <div class="info">
-                            <div class="title">Virginia Bluebell</div>
+                            <div class="title"><i>Mertensia virginica</i></div>
                             <div class="date">April, 2020</div>
                         </div>
                     </div>
                     <div class="piece">
-                        <img src="../portfolio/images/pinecone_4-20.png">
+                        <img src="../portfolio/images/pinecone_4-20.png" onclick="openModal('inkModal');currentSlide(5)">
                         <div class="info">
                             <div class="title">Pinecone</div>
                             <div class="date">April, 2020</div>
                         </div>
                     </div>
                     <div class="piece">
-                        <img src="../portfolio/images/holly-oak_5-20.png">
+                        <img src="../portfolio/images/holly-oak_5-20.png" onclick="openModal('inkModal');currentSlide(6)">
                         <div class="info">
-                            <div class="title">Holly Oak</div>
+                            <div class="title"><i>Quercus ilex</i></div>
                             <div class="date">May, 2020</div>
                         </div>
+                    </div>
+                </div>
+
+                <div id="inkModal" class="modal">
+                    <span class="close cursor" onclick="closeModal('inkModal')">&times;</span>
+                    <div class="modal-content">
+
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 3</div>
+                            <img src="../portfolio/images/bluebell_4-20.png" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="../portfolio/images/pinecone_4-20.png" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="../portfolio/images/holly-oak_5-20.png" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 4, 6)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 4, 6)">&#10095;</a>
                     </div>
                 </div>
             </div>
@@ -152,23 +202,41 @@
                 <div class="gallery">
 
                     <div class="piece">
-                        <img src="../portfolio/images/sage_4-20.png">
+                        <img src="../portfolio/images/sage_4-20.png" onclick="openModal('charcoalModal');currentSlide(7)">
                         <div class="info">
-                            <div class="title">Sage</div>
+                            <div class="title"><i>Salvia officinalis</i></div>
                             <div class="date">April, 2020</div>
                         </div>
                     </div>
                     <div class="piece">
-                        <img src="../portfolio/images/peony_5-20.png">
+                        <img src="../portfolio/images/peony_5-20.png" onclick="openModal('charcoalModal');currentSlide(8)">
                         <div class="info">
-                            <div class="title">Tree Peony</div>
+                            <div class="title"><i>Paeonia suffruticosa</i></div>
                             <div class="date">May, 2020</div>
                         </div>
                     </div>
                 </div>
+
+                <div id="charcoalModal" class="modal">
+                    <span class="close cursor" onclick="closeModal('charcoalModal')">&times;</span>
+                    <div class="modal-content">
+
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 2</div>
+                            <img src="../portfolio/images/sage_4-20.png" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 2</div>
+                            <img src="../portfolio/images/peony_5-20.png" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 7, 8)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 7, 8)">&#10095;</a>
+                    </div>
+                </div>
             </div>
         </div>
-
         <div class="section mixed">
             <div class="caption">
                 <div class="heading">
@@ -180,25 +248,49 @@
                 <div class="gallery">
 
                     <div class="piece">
-                        <img src="../portfolio/images/forget-me-not_4-20.png">
+                        <img src="../portfolio/images/forget-me-not_4-20.png" onclick="openModal('mixedModal');currentSlide(9)">
                         <div class="info">
-                            <div class="title">Forget Me Not</div>
+                            <div class="title"><i>Myosotis sp.</i></div>
                             <div class="date">April, 2020</div>
                         </div>
                     </div>
                     <div class="piece">
-                        <img src="../portfolio/images/redbud_5-20.png">
+                        <img src="../portfolio/images/redbud_5-20.png" onclick="openModal('mixedModal');currentSlide(10)">
                         <div class="info">
-                            <div class="title">Redbud</div>
+                            <div class="title"><i>Cercis canadensis</i></div>
                             <div class="date">May, 2020</div>
                         </div>
                     </div>
                     <div class="piece">
-                        <img src="../portfolio/images/lily-valley_5-20.png">
+                        <img src="../portfolio/images/lily-valley_5-20.png" onclick="openModal('mixedModal');currentSlide(11)">
                         <div class="info">
-                            <div class="title">Lily of the Valley</div>
+                            <div class="title"><i>Convallaria majalis</i></div>
                             <div class="date">May, 2020</div>
                         </div>
+                    </div>
+                </div>
+
+                <div id="mixedModal" class="modal">
+                    <span class="close cursor" onclick="closeModal('mixedModal')">&times;</span>
+                    <div class="modal-content">
+
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 3</div>
+                            <img src="../portfolio/images/forget-me-not_4-20.png" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="../portfolio/images/redbud_5-20.png" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="../portfolio/images/lily-valley_5-20.png" style="width:100%">
+                        </div>
+
+                        <a class="prev" onclick="plusSlides(-1, 9, 11)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1, 9, 11)">&#10095;</a>
                     </div>
                 </div>
             </div>
@@ -241,5 +333,49 @@
             var section = visible[j];
             section.style.display = "block";
         }
+    }
+</script>
+
+<script>
+    //taken from w3schools with modifications
+    
+    // Open the Modal
+    function openModal(name) {
+      //document.getElementById("myModal").style.display = "block";
+      document.getElementById(name).style.display = "block";
+    }
+
+    // Close the Modal
+    function closeModal(name) {
+      //document.getElementById("myModal").style.display = "none";
+      document.getElementById(name).style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n, min, max) {
+      if (slideIndex + n > max) slideIndex = min;
+      else slideIndex += n;
+
+      showSlides(slideIndex);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
     }
 </script>
